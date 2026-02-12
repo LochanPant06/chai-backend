@@ -5,3 +5,5 @@
 *.env
 .env
 .env.*
+
+# inn file mai sensitive information hoti hai isliye inhe ignore karna chahiye

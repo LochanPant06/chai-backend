@@ -5,7 +5,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon scr/index.js"
+    "start": "nodemon -r dotenv/config --experimental-json-modules src/index.js",
+    "//comment": "{-r dotenv/config --experimental-json-modules} ye dono flag dotenv ko enable karne ke liye hai"
   },
   "keywords": [
     "javascript",
@@ -17,5 +18,13 @@
   "devDependencies": {
     "nodemon": "^3.1.11",
     "prettier": "^3.7.4"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "mongodb": "^7.0.0",
+    "mongoose": "^9.0.1"
   }
 }
