@@ -3,7 +3,7 @@ import { request } from "express";
 // MTHD 2 : simpler way
 
 const asyncHandler = (requestHandler) => {
-  (req, res, next) => {
+  return (req, res, next) => {
     Promise.resolve(requestHandler(req, res, next)).catch((err) => next(err));
   };
 };
@@ -31,4 +31,27 @@ const asyncHandler = (requestHandler) => {
 //   }
 // };
 
-export default { asyncHandler };
+export default asyncHandler ;
+
+
+/*
+insted of doing this :-
+
+export const createComplaint = async (req, res) => {
+  try {
+    const data = await Model.create(req.body);
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+
+we do this :-
+
+export const createComplaint = asyncHandler(async (req, res) => {
+  const data = await Model.create(req.body);
+  res.json(data);
+});
+
+*/ 

@@ -16,6 +16,9 @@ app.get(('/'), (req,res)=>{
   res.send("hello");
 })
 
+
+
+
 connectDB()
 .then(() => {    //promise after async
   app.listen(process.env.PORT || 8000, () => { //yaha per humne server connect kara hai 
